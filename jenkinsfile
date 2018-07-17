@@ -47,7 +47,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                echo '## TODO DEPLOYMENT ##'
+                sh "-Psonatype -Darguments=-DskipTests -DreleaseVersion=${version} -DdevelopmentVersion=${pom.version} -DpushChanges=false -DlocalCheckout=true -DpreparationGoals=initialize release:prepare release:perform -B"
             }
         }
     }

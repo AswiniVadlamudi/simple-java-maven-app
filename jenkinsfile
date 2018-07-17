@@ -34,7 +34,8 @@ pipeline {
                 echo 'Sonar Scanner'
                	//def scannerHome = tool 'SonarQube Scanner 6.0'
 		  // withSonarQubeEnv('SonarQube Server') {
-			    	sh 'mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.2:sonar'
+			 
+				sh "mvn sonar:sonar -Dsonar.host.url=http://35.227.88.186:9000"
 			   // }
             }
         }

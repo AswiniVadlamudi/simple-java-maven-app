@@ -32,10 +32,10 @@ pipeline {
         stage('Sonar') {
             steps {
                 echo 'Sonar Scanner'
-               	def scannerHome = tool 'SonarQube Scanner 6.0'
-		   withSonarQubeEnv('SonarQube Server') {
-			    	sh "${scannerHome}/bin/sonar-scanner"
-			    }
+               	//def scannerHome = tool 'SonarQube Scanner 6.0'
+		  // withSonarQubeEnv('SonarQube Server') {
+			    	sh 'mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.2:sonar'
+			   // }
             }
         }
         stage('Package') {

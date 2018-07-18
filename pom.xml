@@ -8,6 +8,12 @@
   <name>my-app</name>
   <url>http://maven.apache.org</url>
   <dependencies>
+	    <!-- https://mvnrepository.com/artifact/org.jenkinsci.plugins/pipeline-model-definition -->
+<dependency>
+    <groupId>org.jenkinsci.plugins</groupId>
+    <artifactId>pipeline-model-definition</artifactId>
+    <version>1.0</version>
+</dependency>
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
@@ -17,7 +23,7 @@
   </dependencies>
   <build>
     <plugins>
-      <plugin>
+	  <plugin>
         <!-- Build an executable JAR -->
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-jar-plugin</artifactId>

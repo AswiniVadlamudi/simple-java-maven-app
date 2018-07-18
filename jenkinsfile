@@ -14,13 +14,17 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Clean Build'
+		withEnv(['PATH+EXTRA=/usr/sbin:/usr/bin:/sbin:/bin']){
                 sh 'mvn clean compile'
+		}
             }
         }
         stage('Test') {
             steps {
+	    	withEnv(['PATH+EXTRA=/usr/sbin:/usr/bin:/sbin:/bin']){
                 echo 'Testing'
                 sh 'mvn test'
+		}
             }
         }
         //stage('JaCoCo') {
